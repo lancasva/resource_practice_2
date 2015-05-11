@@ -1,10 +1,10 @@
 class ActorsController < ApplicationController
   def index
-    @actors = Actor.page(params[:page])
+    @actors = Actor.all
   end
 
   def show
-    @actor = Actor.find(params[id])
+    @actor = Actor.find(params[:id])
   end
 
   def new_form
@@ -34,7 +34,7 @@ class ActorsController < ApplicationController
     @actor.bio = params[:bio]
     @actor.image_url = params[:image_url]
 
-    @actor.save
+
 
     render("show")
   end
